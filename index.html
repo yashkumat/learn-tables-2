@@ -3,7 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes" >
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="icon" href="table.png" type="image/png" sizes="16x16">
+    <meta name="description" content="Speak to get the table you want to learn.">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Yash Kumat">
+    <meta property="og:title" content="Learn The Tables">
+    <meta property="og:type" content="game" />
+    <meta property="og:image" content="https://yashkumat.github.io/learn-table-2/table.png">
+    <meta property="og:url" content="https://yashkumat.github.io/learn-table-2/">
     <title>Learn The Tables</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -35,7 +45,7 @@
                 table_result.innerHTML = ""
                 for (let index = 1; index <= 10; index++) {
                     const element = document.createElement('li')
-                    element.innerHTML = `${number} * ${index} = ${number * index}`
+                    element.innerHTML = `${number} X ${index} = ${number * index}`
                     table_result.appendChild(element)
                 }
             },1000)
