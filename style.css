@@ -1,0 +1,100 @@
+@import url(https://fonts.googleapis.com/css?family=Walter+Turncoat);
+
+*{
+    margin: 0;
+    padding: 0;
+      font-family: "Walter Turncoat", cursive;
+    font-size: 30px;
+    color: #E8E8E8;
+}
+
+body {
+  background: -webkit-linear-gradient(90deg, #485563 10%, #29323c 90%);
+  background: -moz-linear-gradient(90deg, #485563 10%, #29323c 90%);
+  background: -ms-linear-gradient(90deg, #485563 10%, #29323c 90%);
+  background: -o-linear-gradient(90deg, #485563 10%, #29323c 90%);
+  background: linear-gradient(90deg, #485563 10%, #29323c 90%);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    min-height: 80vh;
+    color: #E8E8E8;
+    background-color: #497959;
+    border-radius: 10px;
+    border: #B78240 solid 5px;
+}
+
+.input-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 80vw;
+    margin: 5px;
+}
+
+.result-container{
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+#table_of{
+    text-align: center;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #B78240;
+    height: auto;
+    width: 50%;
+}
+
+input:focus{
+    background-color: #B78240 !important;
+    outline: none;
+}
+input::placeholder{
+    color: rgba(40, 50, 60, 0.25);
+    font-size: 15px;
+}
+
+#get_result_button{
+    border: none;
+    color: #B78240;
+    background-color: #497959;
+}
+
+#get_result_button:hover{
+    background-color: #B78240;
+    color: #E8E8E8;
+}
+
+.table_result li{
+    list-style: none;
+}
+
+@keyframes flip {
+    0%,80% {
+      transform: rotateY(360deg) 
+    }
+}
+
+@media screen and (max-width: 500px) {
+    *{
+        font-size: 20px !important;
+    }
+    .title{
+        font-size: 25px !important;
+    }
+}

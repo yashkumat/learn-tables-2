@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn The Tables</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <span class="title">Learn table Of</span>
+        <div class="input-container">
+            <input type="text" name="table_of" placeholder="Enter a number" onkeydown="validate_input(event)" id="table_of">
+            <button id="get_result_button" onclick="get_result()">Get Result</button>
+        </div>
+        <div class="result-container">
+            <ul class="table_result" id="table_result">
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+
+    function get_result(){
+        let table_of = document.getElementById('table_of')
+        let number = table_of.value
+
+        let table_result = document.getElementById('table_result')
+        table_result.style.animation = 'flip 1s 1'
+
+        if(number){
+            setTimeout(()=>{
+                table_result.style.animation = ''
+                table_result.innerHTML = ""
+                for (let index = 1; index <= 10; index++) {
+                    const element = document.createElement('li')
+                    element.innerHTML = `${number} * ${index} = ${number * index}`
+                    table_result.appendChild(element)
+                }
+            },1000)
+        }else{
+            table_of.focus();
+            return false
+        }
+
+    }
+    function validate_input(evt){
+        var charCode = (evt.which) ? evt.which : evt.keyCode
+        if (charCode > 31 && (charCode < 48 || charCode > 57))
+            evt.preventDefault();
+    }
+</script>
+<script>
+
+    window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition = new SpeechRecognition();
+    recognition.interimResults = true;
+    let table_of = document.getElementById('table_of')
+
+    recognition.addEventListener('result', event => {
+        const transcript = Array.from(event.results)
+        .map(result => result[0])
+        .map(result => result.transcript).join('');
+
+        if (isNaN(transcript)) 
+        {
+            alert("Must input numbers");
+            return false;
+        }
+
+        table_of.value = transcript;
+    });
+    
+    recognition.start();
+    
+    recognition.addEventListener('end', recognition.start);
+
+</script>
+</html>
